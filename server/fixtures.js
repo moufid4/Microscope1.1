@@ -5,7 +5,7 @@ if (Posts.find().count() === 0) {
   });
 
   Posts.insert({
-    title: 'Meteor1',
+    title: 'Meteor',
     url: 'http://meteor.com'
   });
 
