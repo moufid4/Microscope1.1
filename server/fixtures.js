@@ -19,6 +19,14 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 7 * 3600 * 1000)
   });
   
+  var meteorBook = Posts.insert({
+    title: 'The Meteor Book',
+    userId: tom._id,
+    author: tom.profile.name,
+    url: 'http://themeteorbook.com',
+    submitted: new Date(now - 12 * 3600 * 1000)
+  });
+  
   Comments.insert({
     postId: telescopeId,
     userId: tom._id,
@@ -51,11 +59,5 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 10 * 3600 * 1000)
   });
   
-  var meteorBook = Posts.insert({
-    title: 'The Meteor Book',
-    userId: tom._id,
-    author: tom.profile.name,
-    url: 'http://themeteorbook.com',
-    submitted: new Date(now - 12 * 3600 * 1000)
-  });
+  
 }
