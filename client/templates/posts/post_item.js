@@ -7,4 +7,11 @@ Template.postItem.helpers({
 		a.href = this.url;
 		return a.hostname;
 	}
-})
+});
+
+Template.postItem.events({
+	'click .upvote': function(e) {
+		e.preventDefault();
+		Meteor.call('upvote', this._id);
+	}
+});
