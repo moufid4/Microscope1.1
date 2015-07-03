@@ -1,20 +1,20 @@
 if (Posts.find().count() === 0) {
   var now = new Date().getTime();
 
-  var tomId = Meteor.users.insert({
-    profile: { name: 'Tom Coleman' }
+  var mouId = Meteor.users.insert({
+    profile: { name: 'Mou' }
   });
-  var tom = Meteor.users.findOne(tomId);
-  var sachaId = Meteor.users.insert({
-    profile: { name: 'Sacha Greif' }
+  var mou = Meteor.users.findOne(mouId);
+  var moufidId = Meteor.users.insert({
+    profile: { name: 'Moufid' }
   });
-  var sacha = Meteor.users.findOne(sachaId);
+  var moufid = Meteor.users.findOne(moufidId);
 
-  var telescopeId = Posts.insert({
-    title: 'Introducing Telescope',
-    userId: sacha._id,
-    author: sacha.profile.name,
-    url: 'http://sachagreif.com/introducing-telescope/',
+  var googleId = Posts.insert({
+    title: 'Google',
+    userId: moufid._id,
+    author: moufid.profile.name,
+    url: 'http://www.google.com/',
     submitted: new Date(now - 7 * 3600 * 1000),
     commentsCount: 2,
     upvoters: [],
@@ -22,25 +22,25 @@ if (Posts.find().count() === 0) {
   });
 
   Comments.insert({
-    postId: telescopeId,
-    userId: tom._id,
-    author: tom.profile.name,
+    postId: googleId,
+    userId: mou._id,
+    author: mou.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
     body: "Good!"
   });
 
   Comments.insert({
-    postId: telescopeId,
-    userId: sacha._id,
-    author: sacha.profile.name,
+    postId: googleId,
+    userId: moufid._id,
+    author: moufid.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000),
     body: 'Excellent!'
   });
 
   Posts.insert({
     title: 'Meteor',
-    userId: tom._id,
-    author: tom.profile.name,
+    userId: mou._id,
+    author: mou.profile.name,
     url: 'http://meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000),
     commentsCount: 0,
@@ -50,8 +50,8 @@ if (Posts.find().count() === 0) {
 
   Posts.insert({
     title: 'The Meteor Book',
-    userId: tom._id,
-    author: tom.profile.name,
+    userId: mou._id,
+    author: mou.profile.name,
     url: 'http://themeteorbook.com',
     submitted: new Date(now - 12 * 3600 * 1000),
     commentsCount: 0,
@@ -62,8 +62,8 @@ if (Posts.find().count() === 0) {
   for (var i = 0; i < 10; i++) {
     Posts.insert({
       title: 'Test post #' + i,
-      author: sacha.profile.name,
-      userId: sacha._id,
+      author: moufid.profile.name,
+      userId: moufid._id,
       url: 'http://google.com/?q=test-' + i,
       submitted: new Date(now - i * 3600 * 1000 + 1),
       commentsCount: 0,
